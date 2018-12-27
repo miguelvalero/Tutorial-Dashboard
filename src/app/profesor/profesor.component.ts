@@ -25,4 +25,10 @@ export class ProfesorComponent implements OnInit {
   Incrementar (nombre: string) {
     this.lista.filter(persona => persona.nombre === nombre)[0].puntos ++;
   }
+
+  ResetPuntos () {
+    this.lista.forEach(function (alumno) {
+      alumno.puntos = 0;
+    });
+  }
 }
