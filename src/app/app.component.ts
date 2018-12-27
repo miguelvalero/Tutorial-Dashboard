@@ -7,12 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ProyectoTutorial';
-  numero: number;
+  numero1: number;
+  numero2: number;
   resultado: number;
 
-  Duplicar () {
-    console.log ('Voy a duplicar');
-    this.resultado = this.numero * 2;
+  Multiplicar () {
+    console.log ('Voy a multiplicar');
+    this.resultado = this.numero1 * this.numero2;
     console.log (this.resultado);
   }
 }
