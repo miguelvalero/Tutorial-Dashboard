@@ -1,6 +1,53 @@
 
 
 <div class="container">
+  <div class="row">
+    <div class="col-sm-6" style="background-color:rgb(251, 255, 0);">
+        <h1 class="text-success">Listado de alumnos</h1>
+        <table class="table">
+          <thead>
+            <tr  class="font-weight-bold text-primary" >
+              <th><h2>Nombre</h2></th>
+              <th><h2>Puntos</h2></th>
+            </tr>
+          </thead>
+          <tbody>
+          <tr  class="info" *ngFor="let persona of lista">
+
+              <td><h3>{{persona.nombre}}</h3></td>
+              <td><span class="badge"><h4>{{persona.puntos}}</h4></span></td>
+              <td><button  class="btn btn-success" (click)="Incrementar(persona.nombre)"><span class="glyphicon glyphicon-plus"></span></button></td>
+              <td><button  class="btn btn-danger" (click)="Eliminar(persona.nombre)"><span class="glyphicon glyphicon-trash"></span></button></td>
+
+          </tr>
+          </tbody>
+        </table>
+        <button class="btn btn-primary btn-lg btn-block" (click)="Mostrar()">Mostrar lista de personas </button>
+        <button class="btn btn-secondary btn-lg btn-block" (click)="OrdenarPuntos()">Ordenar por puntos </button>
+
+    </div>
+    <div class="col-sm-6" style="background-color:rgb(222, 255, 192);">
+        <h1 class="text-success">Nueva persona</h1>
+
+        <form class="form-inline" (ngSubmit)="Pon();">
+            <input type="text" class="form-control mb-2 mr-sm-2" name="nombre" placeholder="Escribe el nombre" required [(ngModel)]="nombre">
+            <input type="text" class="form-control mb-2 mr-sm-2" name="pass" placeholder="Escribe la contraseña" required [(ngModel)]="pass">
+            <select class="custom-select mb-2 mr-sm-2" name="rol">
+                <option selected>Rol...</option>
+                <option value="1">Profesor</option>
+                <option value="2">Alumno</option>
+            </select>
+            <input type="text" class="form-control mb-2 mr-sm-2" name="puntos"  placeholder="Puntos iniciales" required [(ngModel)]="puntos">
+          <button type="submit" class="btn btn-primary mb-2">Submit</button>
+
+        </form>
+    </div>
+  </div>
+</div>
+
+
+<!--
+<div class="container">
   <h1 class="text-success">Listado de alumnos</h1>
   <table class="table">
     <thead>
@@ -12,12 +59,12 @@
     <tbody>
     <tr  class="info" *ngFor="let persona of lista">
 
-        <td>{{persona.nombre}}</td>
-        <td><span class="badge">{{persona.puntos}}</span></td>
+        <td><h3>{{persona.nombre}}</h3></td>
+        <td><span class="badge"><h4>{{persona.puntos}}</h4></span></td>
         <td><button  class="btn btn-success" (click)="Incrementar(persona.nombre)"><span class="glyphicon glyphicon-plus"></span></button></td>
         <td><button  class="btn btn-danger" (click)="Eliminar(persona.nombre)"><span class="glyphicon glyphicon-trash"></span></button></td>
 
-      </tr>
+    </tr>
     </tbody>
   </table>
   <button class="btn btn-primary btn-lg btn-block" (click)="Mostrar()">Mostrar lista de personas </button>
@@ -30,20 +77,16 @@
   <h1 class="text-success">Nueva persona</h1>
 
   <form class="form-inline" (ngSubmit)="Pon();">
-      <!-- <label class="sr-only" for="inlineFormInputName2">Nombre</label> -->
       <input type="text" class="form-control mb-2 mr-sm-2" name="nombre" placeholder="Escribe el nombre" required [(ngModel)]="nombre">
-      <!-- <label class="sr-only" for="inlineFormInputName2">Pass</label> -->
       <input type="text" class="form-control mb-2 mr-sm-2" name="pass" placeholder="Escribe la contraseña" required [(ngModel)]="pass">
       <select class="custom-select mb-2 mr-sm-2" name="rol">
           <option selected>Rol...</option>
           <option value="1">Profesor</option>
           <option value="2">Alumno</option>
       </select>
-      <!-- <label class="sr-only" for="inlineFormInputName2">Puntos iniciales</label> -->
       <input type="text" class="form-control mb-2 mr-sm-2" name="puntos"  placeholder="Puntos iniciales" required [(ngModel)]="puntos">
-
     <button type="submit" class="btn btn-primary mb-2">Submit</button>
 
   </form>
 
-</div>
+</div> -->
