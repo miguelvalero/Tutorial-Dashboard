@@ -40,6 +40,15 @@ export class ListaService {
     return this.lista;
   }
 
+  OrdenarAlfabeticamente (): Persona [] {
+    this.lista = this.lista.sort(
+        function(obj1, obj2) {
+            return obj1.nombre.localeCompare(obj2.nombre);
+        });
+    return this.lista;
+  }
+
+
   PonPersona(persona: Persona): Persona [] {
     this.lista.push(persona);
     return this.lista;
