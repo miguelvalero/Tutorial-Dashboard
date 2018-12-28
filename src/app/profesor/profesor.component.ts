@@ -34,10 +34,6 @@ export class ProfesorComponent implements OnInit {
     this.lista = this.servicioLista.OrdenarPuntos();
   }
 
-  OrdenarAlfabeticamente () {
-    this.lista = this.servicioLista.OrdenarAlfabeticamente();
-  }
-
   Pon () {
     this.lista = this.servicioLista.PonPersona (
             new Persona (this.nombre, this.pass, this.rol, this.puntos));
