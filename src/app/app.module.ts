@@ -8,7 +8,6 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatTableModule} from '@angular/material/table';
 import {MatInputModule } from '@angular/material';
 import {MatSelectModule} from '@angular/material/select';
-import {MatBadgeModule} from '@angular/material/badge';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -33,8 +32,7 @@ import { ProfesorComponent } from './profesor/profesor.component';
     MatIconModule,
     MatTableModule,
     MatInputModule,
-    MatSelectModule,
-    MatBadgeModule
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
