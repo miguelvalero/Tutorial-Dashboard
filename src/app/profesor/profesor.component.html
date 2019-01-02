@@ -3,18 +3,15 @@
   <button mat-raised-button color="accent" (click)="OrdenarPuntos()">Ordenar por puntos</button>
 </div>
 
+
 <h2>LISTA DE ALUMNOS</h2>
 <table mat-table [dataSource]="lista" class="mat-elevation-z8">
 
   <ng-container matColumnDef="nombre">
     <th mat-header-cell *matHeaderCellDef> <h2 style='color:rgb(9, 94, 9)' >Nombre</h2> </th>
-    <td mat-cell *matCellDef="let persona"><p *ngIf="persona.rol === 'Alumno'"> {{persona.nombre}} </p> </td>
+    <td mat-cell *matCellDef="let persona"><p *ngIf="persona.rol === 'Alumno'"> <h3><p><span matBadge="{{persona.puntos}}" matBadgeOverlap="false">{{persona.nombre}}</span> </p></h3></td>
   </ng-container>
 
-  <ng-container matColumnDef="puntos">
-    <th mat-header-cell *matHeaderCellDef> <h2 style='color:rgb(9, 94, 9)'>Puntos </h2></th>
-    <td mat-cell *matCellDef="let persona"> <p *ngIf="persona.rol === 'Alumno'"> {{persona.puntos}} </p></td>
-  </ng-container>
   <ng-container matColumnDef="incrementar">
       <th mat-header-cell *matHeaderCellDef></th>
       <td mat-cell *matCellDef="let persona"><button *ngIf="persona.rol === 'Alumno'" (click)="Incrementar(persona.nombre)"><i class="material-icons green">add</i></button> </td>

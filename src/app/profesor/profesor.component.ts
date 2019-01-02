@@ -8,7 +8,7 @@ import { ListaService } from '../lista.service';
   styleUrls: ['./profesor.component.css']
 })
 export class ProfesorComponent implements OnInit {
-  displayedColumns: string[] = ['nombre', 'puntos', 'incrementar', 'eliminar'];
+  displayedColumns: string[] = ['nombre', 'incrementar', 'eliminar'];
   lista: Persona[] = [];
   nombre: string;
   pass: string;
