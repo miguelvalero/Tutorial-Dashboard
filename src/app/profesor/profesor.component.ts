@@ -41,10 +41,6 @@ export class ProfesorComponent implements OnInit {
             new Persona (this.nombre, this.pass, this.rol, this.puntos));
   }
 
-  Ver (nombre: string) {
-    window.location.href = '/datos/' + nombre;
-  }
-
   GoBack () {
     this.location.back();
   }
