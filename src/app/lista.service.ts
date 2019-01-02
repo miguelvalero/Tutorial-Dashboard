@@ -45,4 +45,25 @@ export class ListaService {
     return this.lista;
   }
 
+  Autentificar(nombre: string, pass: string): Persona {
+    let user: Persona[] = [];
+    user = this.lista.filter(persona => persona.nombre === nombre && persona.pass === pass );
+
+    if (user.length === 0) {
+      return null;
+    } else {
+      return user[0];
+    }
+  }
+
+  PonPass (nombre: string, nuevopass: string): void {
+    this.lista.filter(persona => persona.nombre === nombre)[0].pass = nuevopass;
+    console.log (this.lista);
+  }
+
+  DamePersona(nombre: string): Persona {
+    return this.lista.filter(persona => persona.nombre === nombre)[0];
+  }
+
+
 }

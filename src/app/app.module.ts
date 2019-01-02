@@ -7,13 +7,17 @@ import { AppComponent } from './app.component';
 import { CalculadoraComponent } from './calculadora/calculadora.component';
 import { PersonaComponent } from './persona/persona.component';
 import { ProfesorComponent } from './profesor/profesor.component';
+import { LoginComponent } from './login/login.component';
+import { AlumnoComponent } from './alumno/alumno.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CalculadoraComponent,
     PersonaComponent,
-    ProfesorComponent
+    ProfesorComponent,
+    LoginComponent,
+    AlumnoComponent
   ],
   imports: [
     BrowserModule,
