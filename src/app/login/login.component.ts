@@ -11,12 +11,15 @@ export class LoginComponent implements OnInit {
 
   nombre: string;
   pass: string;
+  mensaje: string;
+
   constructor(private servicioLista: ListaService) { }
 
   ngOnInit() {
   }
 
   Autentificar () {
+    this.mensaje = '';
     let persona: Persona;
     persona = this.servicioLista.Autentificar (this.nombre, this.pass);
     if (persona != null) {
@@ -25,6 +28,8 @@ export class LoginComponent implements OnInit {
       } else {
         window.location.href = '/alumno/' + persona.nombre;
       }
+    } else {
+      this.mensaje = 'Claves de acceso incorrectas';
     }
 
   }
