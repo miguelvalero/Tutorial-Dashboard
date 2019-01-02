@@ -8,7 +8,7 @@ import { ListaService } from '../lista.service';
   styleUrls: ['./profesor.component.css']
 })
 export class ProfesorComponent implements OnInit {
-
+  displayedColumns: string[] = ['nombre', 'puntos', 'incrementar', 'eliminar'];
   lista: Persona[] = [];
   nombre: string;
   pass: string;
@@ -32,10 +32,12 @@ export class ProfesorComponent implements OnInit {
 
   OrdenarPuntos () {
     this.lista = this.servicioLista.OrdenarPuntos();
+    this.lista = this.servicioLista.Eliminar (' ');
   }
 
   Pon () {
     this.lista = this.servicioLista.PonPersona (
             new Persona (this.nombre, this.pass, this.rol, this.puntos));
+    this.lista = this.servicioLista.Eliminar (' ');
   }
 }

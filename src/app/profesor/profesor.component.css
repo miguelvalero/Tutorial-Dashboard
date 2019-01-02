@@ -3,3 +3,13 @@ h2 {
   font-family: Arial;
   font-weight: lighter;
 }
+.example-button-row button,
+.example-button-row a {
+  margin-right: 8px;
+}
+.material-icons.green { color: rgb(18, 161, 54); }
+.material-icons.red { color: rgb(224, 62, 12); }
+
+table {
+  width: 45%;
+}
