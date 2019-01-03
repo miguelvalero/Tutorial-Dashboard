@@ -7,7 +7,7 @@
   <ul *ngFor="let persona of lista">
     <li *ngIf="persona.rol === 'Alumno'">
       Nombre: {{persona.nombre}} - Puntos: {{persona.puntos}}
-      <button (click)="Incrementar(persona.nombre)">Añadir punto</button>
+      <button (click)="Incrementar(persona)">Añadir punto</button>
       <button (click)="Eliminar(persona.nombre)">Eliminar</button>
     </li>
   </ul>

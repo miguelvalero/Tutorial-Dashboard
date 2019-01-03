@@ -4,6 +4,8 @@ import { ListaService } from '../lista.service';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
+import { DbServiceService } from '../db-service.service';
+
 
 @Component({
   selector: 'app-alumno',
@@ -14,13 +16,19 @@ export class AlumnoComponent implements OnInit {
 
   alumno: Persona;
   nuevoPass: string;
-  constructor( private servicioLista: ListaService,
+  constructor(  private servicioLista: ListaService,
+                private dbService: DbServiceService,
                 private route: ActivatedRoute,
                 private location: Location) { }
 
   ngOnInit() {
     const nombre = this.route.snapshot.paramMap.get('nombre');
-    this.alumno = this.servicioLista.DamePersona(nombre);
+    //this.alumno = this.servicioLista.DamePersona(nombre);
+    this.dbService.DamePersona(nombre)
+    .subscribe (alumno => { this.alumno = alumno;
+                            console.log (this.alumno);
+                          }
+                );
   }
 
   Cambia () {

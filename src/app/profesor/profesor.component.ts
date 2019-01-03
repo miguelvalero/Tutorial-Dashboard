@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Persona } from '../Persona';
 import { ListaService } from '../lista.service';
 import { Location } from '@angular/common';
+import { DbServiceService } from '../db-service.service';
+
+
 
 @Component({
   selector: 'app-profesor',
@@ -10,26 +13,39 @@ import { Location } from '@angular/common';
 })
 export class ProfesorComponent implements OnInit {
 
-  lista: Persona[] = [];
+  lista: Persona[];
   nombre: string;
   pass: string;
   rol: string;
   puntos: number;
   constructor(private servicioLista: ListaService,
+              private dbService: DbServiceService,
               private location: Location) { }
 
   ngOnInit() {
   }
 
   Mostrar () {
-    this.lista = this.servicioLista.Mostrar ();
+    //this.lista = this.servicioLista.Mostrar ();
+    console.log ('Voy a pedir');
+    this.dbService.Mostrar()
+    .subscribe(lista => {
+                          this.lista = lista;
+                          console.log ('Ya ha llegado');
+                          console.log (this.lista);
+                        }
+              );
+
+    console.log ('Ya me he suscrito');
   }
 
-  Incrementar (nombre: string) {
-    this.lista = this.servicioLista.Incrementar (nombre);
+  Incrementar (persona: Persona) {
+    this.dbService.Incrementar (persona)
+    .subscribe (() => this.Mostrar());
   }
   Eliminar (nombre: string) {
-    this.lista = this.servicioLista.Eliminar (nombre);
+    this.dbService.Eliminar (nombre)
+    .subscribe (() => this.Mostrar());
   }
 
   OrdenarPuntos () {
@@ -37,8 +53,9 @@ export class ProfesorComponent implements OnInit {
   }
 
   Pon () {
-    this.lista = this.servicioLista.PonPersona (
-            new Persona (this.nombre, this.pass, this.rol, this.puntos));
+    this.dbService.PonPersona (
+            new Persona (this.nombre, this.pass, this.rol, this.puntos))
+            .subscribe (() => this.Mostrar());
   }
 
   GoBack () {
