@@ -23,7 +23,10 @@ export class AlumnoComponent implements OnInit {
 
   ngOnInit() {
     const nombre = this.route.snapshot.paramMap.get('nombre');
-    //this.alumno = this.servicioLista.DamePersona(nombre);
+    this.DameAlumno(nombre);
+  }
+
+  DameAlumno (nombre: string) {
     this.dbService.DamePersona(nombre)
     .subscribe (alumno => { this.alumno = alumno;
                             console.log (this.alumno);
@@ -32,8 +35,10 @@ export class AlumnoComponent implements OnInit {
   }
 
   Cambia () {
-    this.servicioLista.PonPass (this.alumno.nombre, this.nuevoPass);
+    this.dbService.PonPass (this.alumno, this.nuevoPass)
+    .subscribe (() => this.DameAlumno (this.alumno.nombre));
   }
+
   GoBack () {
     this.location.back();
   }

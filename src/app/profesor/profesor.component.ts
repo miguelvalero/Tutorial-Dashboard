@@ -49,7 +49,12 @@ export class ProfesorComponent implements OnInit {
   }
 
   OrdenarPuntos () {
-    this.lista = this.servicioLista.OrdenarPuntos();
+    this.dbService.Mostrar()
+    .subscribe (lista => this.lista = lista.sort(  function(obj1, obj2) {
+                                                    return obj2.puntos - obj1.puntos;
+                                                    }
+                                                )
+                );
   }
 
   Pon () {
