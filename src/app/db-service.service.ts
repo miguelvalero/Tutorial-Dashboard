@@ -2,17 +2,59 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Persona } from './Persona';
+import { analyzeAndValidateNgModules } from '@angular/compiler';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DbServiceService {
-  private APIUrl = 'http://127.0.0.1:3000/personas';
-
+  private APIUrl = 'http://127.0.0.1:3000/api/personas';
+  private APIUrlLogin = 'http://localhost:3000/api/cuentas/login?include=user';
   constructor(private http: HttpClient) { }
 
+  Login (nombre: string, pass: string): Observable<any> {
+    const data = { username : nombre, password : pass };
+    const datajson = JSON.stringify(data);
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json',
+      })
+    };
+
+    console.log (data);
+
+    return this.http.post<any>(this.APIUrlLogin , datajson, httpOptions );
+  }
+
+  // Acceder () {
+  //   console.log ('vamos a acceder: '+ localStorage.getItem('token'));
+  //   const httpOptions = {
+  //     headers: new HttpHeaders({
+  //       'Content-Type':  'application/json',
+  //       'Authorization': localStorage.getItem('token')
+  //     })
+  //   };
+
+
+
+  //   this.http.get<any[]>(this.APIUrl2, httpOptions)
+  //   .subscribe( lista => {
+  //                           console.log ('Ya ha llegado');
+  //                           console.log (lista);
+  //                         }
+  //             );
+
+  // }
+
   Mostrar (): Observable<Persona[]> {
-    return this.http.get<Persona[]>(this.APIUrl);
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json',
+        'Authorization': localStorage.getItem('token')
+      })
+    };
+    return this.http.get<Persona[]>(this.APIUrl, httpOptions);
   }
 
 

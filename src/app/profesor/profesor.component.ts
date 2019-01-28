@@ -26,7 +26,6 @@ export class ProfesorComponent implements OnInit {
   }
 
   Mostrar () {
-    //this.lista = this.servicioLista.Mostrar ();
     console.log ('Voy a pedir');
     this.dbService.Mostrar()
     .subscribe(lista => {
@@ -64,6 +63,7 @@ export class ProfesorComponent implements OnInit {
   }
 
   GoBack () {
+    localStorage.removeItem ('token');
     this.location.back();
   }
 }
