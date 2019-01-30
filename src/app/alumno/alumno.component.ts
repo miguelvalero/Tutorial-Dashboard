@@ -40,6 +40,7 @@ export class AlumnoComponent implements OnInit {
   }
 
   GoBack () {
+    localStorage.removeItem ('token');
     this.location.back();
   }
 }
