@@ -18,6 +18,7 @@ export class ProfesorComponent implements OnInit {
   pass: string;
   rol: string;
   puntos: number;
+  alumnoSeleccionado: Persona;
   constructor(private servicioLista: ListaService,
               private dbService: DbServiceService,
               private location: Location) { }
@@ -45,6 +46,14 @@ export class ProfesorComponent implements OnInit {
   Eliminar (nombre: string) {
     this.dbService.Eliminar (nombre)
     .subscribe (() => this.Mostrar());
+  }
+
+  Seleccionar (persona: Persona) {
+    this.alumnoSeleccionado = persona;
+  }
+
+  recibePuntos($event) {
+    this.alumnoSeleccionado.puntos = $event;
   }
 
   OrdenarPuntos () {

@@ -1,0 +1,18 @@
+<table  *ngIf="alumno">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Pass</th>
+      <th>Puntos</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th> {{alumno.nombre}} </th>
+      <td> {{alumno.pass}}</td>
+      <td> {{alumno.puntos}}</td>
+      <td><input type="number" name="puntos" placeholder="nuevos puntos" required [(ngModel)]="puntos"></td>
+    </tr>
+  </tbody>
+</table>
+<button (click)="Aceptar()">Aceptar </button>

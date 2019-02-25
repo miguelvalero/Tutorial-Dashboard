@@ -9,6 +9,7 @@
       Nombre: {{persona.nombre}} - Puntos: {{persona.puntos}}
       <button (click)="Incrementar(persona)">Añadir punto</button>
       <button (click)="Eliminar(persona.nombre)">Eliminar</button>
+      <button (click)="Seleccionar(persona)">Seleccionar</button>
     </li>
   </ul>
 </div>
@@ -41,3 +42,9 @@
   </form>
 
   <button (click)="GoBack()">Volver </button>
+
+  <h2>Detalles del alumno seleccionado</h2>
+  <app-detalles [alumno]="alumnoSeleccionado"
+                (nuevosPuntos)="recibePuntos($event)"
+
+  ></app-detalles>
