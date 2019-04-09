@@ -1,29 +1,33 @@
-* {
+body {
   box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #b6c1ce
 }
 
-body {
-  font-family: Arial, Helvetica, sans-serif;
-}
 
 /* Style the header */
 .header {
-  background-color: #f1f1f1;
   padding: 30px;
   text-align: center;
   font-size: 35px;
+  color: #fff;
+  font-weight: bolder;
 }
 
 /* Create three equal columns that floats next to each other */
 .columnA {
   float: left;
-  width: 50%;
-  padding: 10px;
+  width: 45%;
+  padding: 1%;
+  margin: 1%;
+  border: 1px solid #000000;
 }
 .columnE {
   float: left;
-  width: 25%;
-  padding: 10px;
+  width: 20%;
+  padding: 1%;
+  margin: 1%;
+  border: 1px solid #000000;
 }
 
 /* Clear floats after the columns */
@@ -35,9 +39,9 @@ body {
 
 /* Style the footer */
 .footer {
-  background-color: #f1f1f1;
-  padding: 10px;
+  padding: 1px;
   text-align: center;
+  margin: 1%;
 }
 
 /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
@@ -48,14 +52,13 @@ body {
 }
 
 h2 {
-  color: rgb(13, 155, 13);
-  font-family: Arial;
-  font-weight: lighter;
+  text-align: center;
+  font-size: 20px;
+  color: #fff;
+  font-weight: bolder;
 }
 
 form {
-  border: 1px solid #000000;
-  background: #aaaaaa;
   width: 98%;
   padding: 1%;
   margin: 1%;
@@ -71,6 +74,7 @@ input, select {
   width: 100%;
   padding: 1%;
   border: 1px solid #000;
+  box-sizing: border-box;
 }
 .boton {
   background: #1668c4;
@@ -78,11 +82,27 @@ input, select {
   border: none;
   width: 98%;
   margin: 1%;
-  margin-top: 5%;
+
 }
 .boton:hover {
  background: #4A88F4;
  cursor:pointer;
+
+}
+.botonP {
+  background: #9e164a;
+  color: #fff;
+  border: none;
+  width: 25%;
+  margin: 1%;
+  margin-top: 5%;
+  font-size: 15px;
+  float:right;
+
+}
+.botonP:hover {
+  background: #d65a89;
+  cursor:pointer;
 
 }
 .titulo {

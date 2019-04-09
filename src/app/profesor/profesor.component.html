@@ -1,33 +1,35 @@
+<body>
 <div class="header">
     Gestion del profesor
 </div>
 
 <div class="row">
-    <div class="columnA" style="background-color:#aaa;">
-        <button id="Mostras" (click)="Mostrar()">Mostrar lista de alumnos </button>
-        <button id="Ordenar" (click)="OrdenarPuntos()">Ordenar por puntos</button>
+    <div class="columnA">
 
-        <h2>LISTA DE ALUMNOS</h2>
+
+        <h2>Lista de alumnos</h2>
         <ul *ngFor="let persona of lista">
-          <li *ngIf="persona.rol === 'Alumno'">
-            Nombre: {{persona.nombre}} - Puntos: {{persona.puntos}}
-            <button (click)="Incrementar(persona)">Añadir punto</button>
-            <button (click)="Eliminar(persona.nombre)">Eliminar</button>
-            <button (click)="Seleccionar(persona)">Seleccionar</button>
+          <li style="list-style:none" *ngIf="persona.rol === 'Alumno'">
+            {{persona.nombre}} <p style="font-weight:bold; display:inline-block;">{{persona.puntos}}</p>
+            <button class="botonP"(click)="Incrementar(persona)">Añadir punto</button>
+            <button class="botonP"(click)="Eliminar(persona.nombre)">Eliminar</button>
+            <button class="botonP"(click)="Seleccionar(persona)">Seleccionar</button>
           </li>
         </ul>
+        <button class="boton" style= "width:35%; margin:7%" (click)="Mostrar()">Mostrar lista de alumnos </button>
+        <button class="boton" style="width:35%; margin:7%"  (click)="OrdenarPuntos()">Ordenar por puntos</button>
     </div>
-    <div class="columnE" style="background-color:#bbb;">
+    <div class="columnE">
         <h2>Detalles del alumno seleccionado</h2>
         <app-detalles [alumno]="alumnoSeleccionado"
                       (nuevosPuntos)="recibePuntos($event)"
 
         ></app-detalles>
     </div>
-    <div class="columnE" style="background-color:#ccc;">
+    <div class="columnE">
 
     <form (ngSubmit)="Pon();">
-        <h2 style="color:#000000;font-size: 20px;text-align: center; font-weight:bolder">Introducir nuevo alumno</h2>
+        <h2 >Introducir nuevo alumno</h2>
         <div>
           <label>Nombre: </label>
           <input type="text" name="nombre" placeholder="escribe el nombre" required [(ngModel)]="nombre">
@@ -54,8 +56,9 @@
 </div>
 
 <div class="footer">
-    <button class="boton" (click)="GoBack()">Volver </button>
+    <button class="boton" style= "width:50%; margin:25%"  (click)="GoBack()">Volver </button>
 </div>
+</body>
 
 
 
