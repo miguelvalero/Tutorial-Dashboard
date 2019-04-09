@@ -1,5 +1,96 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Style the header */
+.header {
+  background-color: #f1f1f1;
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+}
+
+/* Create three equal columns that floats next to each other */
+.columnA {
+  float: left;
+  width: 50%;
+  padding: 10px;
+}
+.columnE {
+  float: left;
+  width: 25%;
+  padding: 10px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the footer */
+.footer {
+  background-color: #f1f1f1;
+  padding: 10px;
+  text-align: center;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media (max-width: 600px) {
+  .column {
+    width: 100%;
+  }
+}
+
 h2 {
   color: rgb(13, 155, 13);
   font-family: Arial;
   font-weight: lighter;
 }
+
+form {
+  border: 1px solid #000000;
+  background: #aaaaaa;
+  width: 98%;
+  padding: 1%;
+  margin: 1%;
+}
+label {
+  font-size: 12px;
+  display: block;
+  width: 100%;
+}
+
+input, select {
+  margin-bottom: 2%;
+  width: 100%;
+  padding: 1%;
+  border: 1px solid #000;
+}
+.boton {
+  background: #1668c4;
+  color: #fff;
+  border: none;
+  width: 98%;
+  margin: 1%;
+  margin-top: 5%;
+}
+.boton:hover {
+ background: #4A88F4;
+ cursor:pointer;
+
+}
+.titulo {
+  color:#000000;
+  font-family: Arial;
+  font-weight: lighter;
+  font-size: 20px;
+  text-align: center;
+  font-weight: bolder;
+}
+
