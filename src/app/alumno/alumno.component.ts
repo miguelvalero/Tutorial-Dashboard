@@ -10,7 +10,7 @@ import { DbServiceService } from '../db-service.service';
 @Component({
   selector: 'app-alumno',
   templateUrl: './alumno.component.html',
-  styleUrls: ['./alumno.component.css']
+  styleUrls: ['./alumno.component.scss']
 })
 export class AlumnoComponent implements OnInit {
 

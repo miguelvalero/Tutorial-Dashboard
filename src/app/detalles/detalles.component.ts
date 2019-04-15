@@ -4,7 +4,7 @@ import { Persona } from '../Persona';
 @Component({
   selector: 'app-detalles',
   templateUrl: './detalles.component.html',
-  styleUrls: ['./detalles.component.css']
+  styleUrls: ['./detalles.component.scss']
 })
 export class DetallesComponent implements OnInit {
   @Input() alumno: Persona;
