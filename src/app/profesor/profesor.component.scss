@@ -1,116 +1,250 @@
-body {
-  box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
-  background: #b6c1ce
-}
+// body {
+//   box-sizing: border-box;
+//   font-family: Arial, Helvetica, sans-serif;
+//   color: #fff;
+//   //background: #b6c1ce
+//   background-image: url("../../imagenes/imagen2.jpg");
+//  // background: url ("src\imagenes\body.jpg");
+
+// }
 
 
-/* Style the header */
-.header {
-  padding: 30px;
-  text-align: center;
-  font-size: 35px;
-  color: #fff;
-  font-weight: bolder;
-}
+// /* Style the header */
+// .header {
+//   padding: 30px;
+//   text-align: center;
+//   font-size: 35px;
+//   color: #fff;
+//   font-weight: bolder;
+//   //background-image: url("../../imagenes/imagen1.jpg");
+//   //background-image: url("../../imagenes/body.jpg");
+// }
 
-/* Create three equal columns that floats next to each other */
-.columnA {
-  float: left;
-  width: 45%;
-  padding: 1%;
-  margin: 1%;
-  border: 1px solid #000000;
-}
-.columnE {
-  float: left;
-  width: 20%;
-  padding: 1%;
-  margin: 1%;
-  border: 1px solid #000000;
-}
+// /* Create three equal columns that floats next to each other */
+// .columnA {
+//   float: left;
+//   width: 45%;
+//   padding: 1%;
+//   margin: 1%;
+//   border: 1px solid #000000;
+//   background-image: url("../../imagenes/imagen4.jpg");
+// }
+// .columnE {
+//   float: left;
+//   width: 20%;
+//   padding: 1%;
+//   margin: 1%;
+//   border: 1px solid #000000;
+//   background-image: url("../../imagenes/imagen4.jpg");
+// }
 
-/* Clear floats after the columns */
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
+// /* Clear floats after the columns */
+// .row:after {
+//   content: "";
+//   display: table;
+//   clear: both;
+// }
 
-/* Style the footer */
-.footer {
-  padding: 1px;
-  text-align: center;
-  margin: 1%;
-}
+// /* Style the footer */
+// .footer {
+//   padding: 1px;
+//   text-align: center;
+//   margin: 1%;
+// }
 
-/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
-@media (max-width: 600px) {
-  .column {
-    width: 100%;
-  }
-}
+// /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+// @media (max-width: 600px) {
+//   .column {
+//     width: 100%;
+//   }
+// }
 
-h2 {
-  text-align: center;
-  font-size: 20px;
-  color: #fff;
-  font-weight: bolder;
-}
+// h2 {
+//   text-align: center;
+//   font-size: 20px;
+//   color: #fff;
+//   font-weight: bolder;
+// }
 
-form {
-  width: 98%;
-  padding: 1%;
-  margin: 1%;
-}
-label {
-  font-size: 12px;
-  display: block;
-  width: 100%;
-}
+// form {
+//   width: 98%;
+//   padding: 1%;
+//   margin: 1%;
+// }
+// label {
+//   font-size: 12px;
+//   display: block;
+//   width: 100%;
+// }
 
-input, select {
-  margin-bottom: 2%;
-  width: 100%;
-  padding: 1%;
-  border: 1px solid #000;
-  box-sizing: border-box;
-}
-.boton {
-  background: #1668c4;
-  color: #fff;
-  border: none;
-  width: 98%;
-  margin: 1%;
+// input, select {
+//   margin-bottom: 2%;
+//   width: 100%;
+//   padding: 1%;
+//   border: 1px solid #000;
+//   box-sizing: border-box;
+// }
+// .boton {
+//   background: #d8db11;
+//   color: #000;
+//   border: none;
+//   width: 98%;
+//   margin: 1%;
+//   border-radius: 50px;
 
-}
-.boton:hover {
- background: #4A88F4;
- cursor:pointer;
+// }
+// .boton:hover {
+//  background:  #e2e46d;
+//  cursor:pointer;
 
-}
-.botonP {
-  background: #9e164a;
-  color: #fff;
-  border: none;
-  width: 25%;
-  margin: 1%;
-  margin-top: 5%;
-  font-size: 15px;
-  float:right;
+// }
+// .botonP {
+//   background: #11a159;
+//   color: #fff;
+//   border: none;
+//   width: 25%;
+//   margin: 1%;
+//   margin-top: 5%;
+//   font-size: 15px;
+//   float:right;
+//   border-radius: 50px;
 
-}
-.botonP:hover {
-  background: #d65a89;
-  cursor:pointer;
+// }
+// .botonP:hover {
+//   background: #46be82;
+//   cursor:pointer;
 
-}
-.titulo {
-  color:#000000;
-  font-family: Arial;
-  font-weight: lighter;
-  font-size: 20px;
-  text-align: center;
-  font-weight: bolder;
-}
+// }
+// .titulo {
+//   color:#000000;
+//   font-family: Arial;
+//   font-weight: lighter;
+//   font-size: 20px;
+//   text-align: center;
+//   font-weight: bolder;
+// }
 
+
+
+// /////
+
+// body {
+//   box-sizing: border-box;
+//   font-family: Arial, Helvetica, sans-serif;
+
+// }
+
+
+// /* Style the header */
+// .header {
+//   padding: 30px;
+//   text-align: center;
+//   font-size: 35px;
+//   color: rgb(94, 14, 14);
+//   font-weight: bolder;
+// }
+
+// /* Create three equal columns that floats next to each other */
+// .columnA {
+//   float: left;
+//   width: 45%;
+//   padding: 1%;
+//   margin: 1%;
+//   border: 1px solid #000000;
+// }
+// .columnE {
+//   float: left;
+//   width: 20%;
+//   padding: 1%;
+//   margin: 1%;
+//   border: 1px solid #000000;
+// }
+// .row {
+
+
+//   background: url ("../../imagenes/body.jpg");
+// }
+
+// /* Clear floats after the columns */
+// .row:after {
+//   content: "";
+//   display: table;
+//   clear: both;
+// }
+
+// /* Style the footer */
+// .footer {
+//   padding: 1px;
+//   text-align: center;
+//   margin: 1%;
+// }
+
+// /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+// @media (max-width: 600px) {
+//   .column {
+//     width: 100%;
+//   }
+// }
+
+// h2 {
+//   text-align: center;
+//   font-size: 20px;
+//   color: #fff;
+//   font-weight: bolder;
+// }
+
+// form {
+//   width: 98%;
+//   padding: 1%;
+//   margin: 1%;
+// }
+// label {
+//   font-size: 12px;
+//   display: block;
+//   width: 100%;
+// }
+
+// input, select {
+//   margin-bottom: 2%;
+//   width: 100%;
+//   padding: 1%;
+//   border: 1px solid #000;
+//   box-sizing: border-box;
+// }
+// .boton {
+//   background: #1668c4;
+//   color: #fff;
+//   border: none;
+//   width: 98%;
+//   margin: 1%;
+
+// }
+// .boton:hover {
+//  background: #4A88F4;
+//  cursor:pointer;
+
+// }
+// .botonP {
+//   background: #9e164a;
+//   color: #fff;
+//   border: none;
+//   width: 25%;
+//   margin: 1%;
+//   margin-top: 5%;
+//   font-size: 15px;
+//   float:right;
+
+// }
+// .botonP:hover {
+//   background: #d65a89;
+//   cursor:pointer;
+
+// }
+// .titulo {
+//   color:#000000;
+//   font-family: Arial;
+//   font-weight: lighter;
+//   font-size: 20px;
+//   text-align: center;
+//   font-weight: bolder;
+// }

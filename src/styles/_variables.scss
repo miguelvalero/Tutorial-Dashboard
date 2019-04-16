@@ -1,0 +1,51 @@
+$verano: (
+  body: (
+    color: #fff,
+    background-image: url("./imagenes/imagen2.jpg")
+  ),
+  columnA: (
+    background-image: url("./imagenes/imagen4.jpg")
+  ),
+  columnE: (
+    background-image: url("./imagenes/imagen4.jpg")
+  ),
+  boton: (
+    background: #d8db11,
+    border-radius: 150px
+  ),
+  boton_hover:  (
+    background:  #e2e46d
+  ),
+  botonP: (
+    background: #11a159,
+    border-radius: 150px
+  ),
+  botonP_hover: (
+    background: #46be82
+  )
+);
+
+$invierno: (
+  body: (
+    color: #000,
+    background: #b6c1ce
+  ),
+  boton: (
+    background: #1668c4,
+    color: #fff
+  ),
+  boton_hover:  (
+    background: #4A88F4
+  ),
+  botonP: (
+    background: #9e164a
+  ),
+  botonP_hover: (
+    background: #d65a89
+  )
+)
+
+
+
+
+
