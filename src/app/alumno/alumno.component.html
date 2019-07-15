@@ -22,5 +22,49 @@
   <input type="text" name="pass" placeholder="escribe nuevo pass" required [(ngModel)]="nuevoPass">
   <button> Cambiar</button>
 </form>
+<br>
+<br>
+<button (click)="ConectarChat()">Conectarse al servidor de chat</button>
+<button (click)="DesconectarChat()">Desconectarse del servidor de chat</button>
+<br>
+<br>
 
+<div style="border-style: solid;">
+  <h1>Conectados </h1>
+  <div *ngFor="let conectado of conectados">
+    {{conectado}}
+  </div>
+  <div>
+    <input [(ngModel)]="mensaje" />
+    <button (click)="EnviarMensaje()">Enviar mensaje al chat</button>
+  </div>
+  <h1>Mensajes del chat </h1>
+  <div *ngFor="let message of mensajes">
+      {{message}}
+  </div>
+</div>
+<br>
+<br>
+
+<div style="border-style: solid;">
+  <button (click)="ConectarPrivado()">Conectar al chat privado</button>
+  <br>
+  <br>
+  <button (click)="DesconectarPrivado()">Desconectar del Chat privado</button>
+
+  <br>
+  <br>
+  <h1>Mensajes del chat privado</h1>
+  <div *ngFor="let message of privados">
+    {{message}}
+  </div>
+  <br>
+  <br>
+  <div>
+    <input [(ngModel)]="privado" />
+    <button (click)="EnviarMensajePrivado()">Enviar mensaje al chat privado</button>
+  </div>
+  <br>
+  <br>
+  </div>
 <button (click)="GoBack()">Volver</button>
