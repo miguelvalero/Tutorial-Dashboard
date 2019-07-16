@@ -18,10 +18,12 @@ export class AlumnoComponent implements OnInit {
   alumno: Persona;
   nuevoPass: string;
   conectados: [];
+  conectadosPrivado: [];
   mensaje: string;
   mensajes: string[] = [];
   privados: string[] = [];
   privado: string;
+  segundos: string;
 
   constructor(  private servicioLista: ListaService,
                 private dbService: DbServiceService,
@@ -59,8 +61,10 @@ export class AlumnoComponent implements OnInit {
       const trozos = mensaje.split (':');
       if (trozos[0] === 'conectados') {
         this.conectados = JSON.parse (trozos[1]);
-      } else {
+      } else if (trozos[0] === 'mensaje') {
         this.mensajes.push (trozos[1]);
+      } else {
+        this.segundos = trozos [1];
       }
     });
   }
@@ -72,14 +76,16 @@ export class AlumnoComponent implements OnInit {
   }
 
   ConectarPrivado () {
-    this.chatService.ConectarPrivado();
+    this.chatService.ConectarPrivado(this.alumno.nombre);
     this.chatService.RecibirMensajesPrivado()
-    .subscribe((message: string) => {
-      console.log ('recibo privado: ' + message);
-      // He recibido un mensaje para el chat privado
-      this.privados.push(message);
+    .subscribe((mensaje: string) => {
+      const trozos = mensaje.split (':');
+      if (trozos[0] === 'conectados') {
+        this.conectadosPrivado = JSON.parse (trozos[1]);
+      } else {
+        this.privados.push (trozos[1]);
+      }
     });
-
   }
 
   DesconectarPrivado () {

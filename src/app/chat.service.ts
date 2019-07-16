@@ -34,13 +34,17 @@ export class ChatService {
           });
           this.socket.on('mensaje', (message) => {
             observer.next('mensaje:' + message);
-        });
+          });
+          this.socket.on('tick', (message) => {
+            observer.next('tick:' + message);
+          });
       });
   }
 
 
-  public ConectarPrivado () {
+  public ConectarPrivado (nombre: String) {
     this.socketPrivado = io(this.url + '/privado');
+    this.socketPrivado.emit ('nombre', nombre);
   }
   public EnviarMensajePrivado(message) {
     this.socketPrivado.emit('mensaje', message);
@@ -48,12 +52,11 @@ export class ChatService {
 
   public RecibirMensajesPrivado = () => {
     return Observable.create((observer) => {
-
-        // Aqui recojo los mensajes para el chat privado
+        this.socketPrivado.on('conectados', (message) => {
+            observer.next('conectados:' + message);
+        });
         this.socketPrivado.on('mensaje', (message) => {
-            // Envio los subscriptores el mensaje,
-            // No hace falta etiquetar porque solo recibo mensajes, no conectados
-            observer.next(message);
+            observer.next('mensaje:' + message);
         });
     });
   }

@@ -9,17 +9,21 @@ let io = socketIO(server);
 
 const port = process.env.PORT || 8080;
 let conectados = [];
+let conectadosPrivado = [];
 let  intervalID;
 let cont =0;
 
-
+let tick=0;
 function EnviarPublicidad() {
-  io.emit('mensaje', 'Vendo relojes baratos');
+  // Han pasado 5 segundos
+  tick = tick+1;
+  io.emit('tick', tick*5);
  }
 
 io.on('connection', (socket) => {
     console.log('se ha conectado un cliente con el que me comunicare a traves del socket: '+ socket.id);
     if (cont == 0) {
+      tick = 0;
       intervalID = setInterval(EnviarPublicidad, 5000);
     }
     cont = cont+1;
@@ -57,6 +61,14 @@ let privado = io.of ('/privado');
 
 privado.on('connection', (socket) => {
   console.log('se ha conectado un cliente al chat privado');
+  let nombre;
+  socket.on('nombre', (message) => {
+    console.log('el nombre del cliente es: '+ message);
+    nombre = message;
+    conectadosPrivado.push (message);
+    console.log ('conectados al chat privado: '+ conectadosPrivado);
+    privado.emit('conectados', JSON.stringify(conectadosPrivado));
+  });
 
   socket.on('mensaje', (message) => {
     console.log('nuevo mensaje para el chat privado: '+ message);
@@ -66,6 +78,10 @@ privado.on('connection', (socket) => {
 
   socket.on('disconnect', () => {
     console.log('Client disconnected del chat privado');
+    var i = conectadosPrivado.indexOf(nombre);
+    conectadosPrivado.splice (i,1);
+    // envio de nuevo la lista de conectados
+    privado.emit('conectados', JSON.stringify(conectadosPrivado));
   });
 });
 

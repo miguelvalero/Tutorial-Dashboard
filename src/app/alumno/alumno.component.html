@@ -34,6 +34,8 @@
   <div *ngFor="let conectado of conectados">
     {{conectado}}
   </div>
+  <h1>Tiempo desde el inicio del chat: {{segundos}} segundos </h1>
+
   <div>
     <input [(ngModel)]="mensaje" />
     <button (click)="EnviarMensaje()">Enviar mensaje al chat</button>
@@ -51,7 +53,12 @@
   <br>
   <br>
   <button (click)="DesconectarPrivado()">Desconectar del Chat privado</button>
-
+  <br>
+  <h1>Conectados al chat privado </h1>
+  <div *ngFor="let conectado of conectadosPrivado">
+    {{conectado}}
+  </div>
+  <div>
   <br>
   <br>
   <h1>Mensajes del chat privado</h1>
