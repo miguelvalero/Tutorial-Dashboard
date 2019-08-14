@@ -1,4 +1,10 @@
 <p>
-  Aqui mostraré la información del alumno: {{nombre}}
+  Aqui mostraré la información del alumno: {{nombre}} cuya contraseña es: {{pass}}
 </p>
+<mat-form-field class="example-full-width">
+  <input matInput placeholder="Nueva contraseña" name="pass" required [(ngModel)]="nuevoPass">
+  <button mat-button *ngIf="pass" matSuffix mat-icon-button aria-label="Clear" (click)="pass=''">
+      <mat-icon>close</mat-icon>
+  </button>
+</mat-form-field>
 <button mat-raised-button color="primary" (click)= "Cerrar();"> Cerrar</button>

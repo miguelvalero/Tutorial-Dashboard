@@ -17,6 +17,7 @@ export class ProfesorComponent implements OnInit {
   pass: string;
   rol: string;
   puntos: number;
+  alumno: Persona;
   constructor(private servicioLista: ListaService,
               private dialog: MatDialog) { }
 
@@ -38,20 +39,28 @@ export class ProfesorComponent implements OnInit {
     this.lista = this.servicioLista.OrdenarPuntos();
     this.lista = this.servicioLista.Eliminar (' ');
   }
-  VerInfo (nombre: string) {
-    console.log ('Voy a mostrar info de: ' + nombre);
+  VerInfo (alumno: Persona) {
+    this.alumno = alumno;
+    console.log ('Voy a mostrar info de: ' + alumno.nombre);
     const dialogConfig = new MatDialogConfig();
 
     dialogConfig.disableClose = true;
     dialogConfig.autoFocus = true;
     dialogConfig.data = {
-      alumno: nombre
+      alumno: this.alumno
     };
     dialogConfig.position = {
       top: '0',
       left: '0'
   };
-    this.dialog.open(InfoAlumnoComponent, dialogConfig);
+  const dialogRef = this.dialog.open(InfoAlumnoComponent, dialogConfig);
+  dialogRef.afterClosed().subscribe(
+    pass => {
+                if (pass != null) {
+                  this.alumno.pass = pass;
+                }
+    }
+);
 
   }
 
