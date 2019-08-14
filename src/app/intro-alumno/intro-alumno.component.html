@@ -1,0 +1,30 @@
+
+<h2>INTRODUCIR NUEVO ALUMNO</h2>
+<form (ngSubmit)="CrearAlumno();" class="example-form">
+
+  <mat-form-field class="example-full-width">
+    <input matInput type="text" placeholder="Nombre" name="nombre" required [(ngModel)]="nombre">
+    <button mat-button *ngIf="nombre" matSuffix mat-icon-button aria-label="Clear" (click)="nombre=''">
+        <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+      <input matInput placeholder="Contraseña" name="pass" required [(ngModel)]="pass">
+      <button mat-button *ngIf="pass" matSuffix mat-icon-button aria-label="Clear" (click)="pass=''">
+          <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+  <mat-form-field>
+      <select matNativeControl placeholder="Rol" required name="rol" required [(ngModel)]="rol">
+        <option value="Profesor">Profesor</option>
+        <option value="Alumno">Alumno</option>
+      </select>
+    </mat-form-field>
+  <mat-form-field class="example-full-width">
+      <input matInput placeholder="Puntos" name="puntos" required [(ngModel)]="puntos">
+      <button mat-button *ngIf="puntos" matSuffix mat-icon-button aria-label="Clear" (click)="puntos=''">
+          <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+  <button mat-raised-button color="primary"> Crear nuevo alumno</button>
+</form>

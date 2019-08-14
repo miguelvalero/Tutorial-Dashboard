@@ -15,13 +15,18 @@ import { AppComponent } from './app.component';
 import { CalculadoraComponent } from './calculadora/calculadora.component';
 import { PersonaComponent } from './persona/persona.component';
 import { ProfesorComponent } from './profesor/profesor.component';
+import {MatDialogModule} from '@angular/material';
+import { InfoAlumnoComponent} from './info-alumno/info-alumno.component';
+import { IntroAlumnoComponent } from './intro-alumno/intro-alumno.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CalculadoraComponent,
     PersonaComponent,
-    ProfesorComponent
+    ProfesorComponent,
+    InfoAlumnoComponent,
+    IntroAlumnoComponent
   ],
   imports: [
     BrowserModule,
@@ -32,9 +37,12 @@ import { ProfesorComponent } from './profesor/profesor.component';
     MatIconModule,
     MatTableModule,
     MatInputModule,
-    MatSelectModule
+    MatSelectModule,
+    MatDialogModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents: [  InfoAlumnoComponent,
+                      IntroAlumnoComponent]
 })
 export class AppModule { }
